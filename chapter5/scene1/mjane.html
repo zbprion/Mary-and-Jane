@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Mary & Jane Go to College</title>
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2;
+var b1=0, a1=460, a2=200; x1=0, x2=320, y2=200, c1=0, c2=220, c3=300, h1=0, h2=300, h3=300, j1=0, j2=400, j3=300;
+function loadimg(){
+//alert('testing loadimg...');
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("class");
+	img2 = document.getElementById("mary");
+	img3 = document.getElementById("jane");
+
+	vcon.drawImage(img1,0,0,600,400); 
+
+	setInterval("anim()",800);
+}
+var counter=0;
+function anim(){
+	counter++;
+	if(counter > 3) counter=0;
+	 b1= counter * 100; x1= counter * 100; c1= counter * 100; h1= counter * 100; j1= counter * 100;
+
+	 
+	vcon.drawImage(img1,0,0,600,400); 
+	vcon.drawImage(img2,b1,0,100,100,a1,a2,100,200);
+	vcon.drawImage(img3,x1,0,100,100,x2,y2,100,200);
+	
+}
+</script>
+</head>
+<body background= "Background.jpg" onload="loadimg()" >
+
+<h1 style="color: red;">Mary And jane Go to College</h1>
+<h2 style="color: yellow;">Chapter 5 </h2>
+<h3 style="color: green;">Scene1:The Stresstah</h3>
+<img style="display:none" id="class" alt="" src="backyard.png" width="600" height="400">
+<img style="display:none" id="mary" alt="" src="jane.png">
+<img style="display:none" id="jane" alt="" src="mary.png">
+<img style="display:none" id="character1" alt="" src="character1.png">
+<img style="display:none" id="character2" alt="" src="character2.png">
+<img style="display:none" id="character3" alt="" src="character3.png">
+<br>
+<canvas style="border-style: inset;" id="drawing" width="600" height="400">
+browser does not support html5</canvas>
+<p>
+	After the end of their meeting they never had an idea what will they present in the Science Fair. Then days had past they never come up to any original invention to present in the science fair until they suffer in headaches and stress. </p>
+<a href="file:///C:/Users/User/Desktop/scne2/janeM.html">
+    <button>Next Scene</button>
+</a>
+
+</body>
+</html>

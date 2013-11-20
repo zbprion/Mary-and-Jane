@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2,img3;
+var x1=0, y1=0, x2=0, y2=230, w2=80, h2=80;
+function loading(){
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("cool");
+	img2 = document.getElementById("daffy");
+	img3 = document.getElementById("daffy");
+	setInterval("anim()",800);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 4) counter=0;
+	x1 = counter * 100;
+	
+	y2+=10;
+	if (y2 > 250) {y2=230; w2=80, h2=80}
+	
+	w2+=5; h2+=1;
+ 	x2 = counter * 100;
+	vcon.drawImage(img1,0,0,800,600);
+	vcon.drawImage(img2,x1,y1,100,100,x2,250,300,300);
+}
+</script>
+</head>
+<body onload="loading()">
+<h1 style="font-family:fantasy; color: orange"> Mary and Jane</h1>
+<h2 style="font-family: Bodoni MT Black"> Chapter 1 </h2>
+<h3>Scene no.3: </h3>
+<img style="display:none" id="cool" alt="" src="download.jpg" width ="800" height="600">
+<img style="display:none" id="daffy" alt="" src="Mary(ENTJABA)(3).fw.png">
+<br>
+<canvas style="border-style:inset;"id="drawing" width="800"height="600"> browser Does not support HTML5</canvas>
+<p style="font-family: Bodoni MT Black"> The scene is all about Jane graduated in her highschool </p>
+<a href="file:///C:/Users/Vivian/Desktop/Chapter%201/Scene2/New%20Text%20Document.html">
+    <button>Next Scene</button>
+</a>
+<a href="">
+    <button>Previous Scene</button>
+</a>
+
+</body>
+</html>

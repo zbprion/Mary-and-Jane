@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2, img3,img4, img5;
+var x1=0, g1=0, y1=0, x2=0, y2=230, w2=80, h2=80;
+function loading(){
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("room");
+	img2 = document.getElementById("1");
+	img3 = document.getElementById("2");
+	img4 = document.getElementById("3");
+	img5 = document.getElementById("4");
+	img6 = document.getElementById("5");
+
+	setInterval("anim()",600);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 5) counter=0;
+	x1 = counter * 239;
+	x2 = counter * 190;
+	
+	y2+=10;
+	if (y2 > 250) {y2=230; w2=80, h2=80}
+	
+	w2+=5; h2+=1;
+	vcon.drawImage(img1,0,0,800,600);
+	vcon.drawImage(img2,x1,0,160,300,80,100,250,450);
+	vcon.drawImage(img3,x1,0,170,320,130,130,250,450);
+	vcon.drawImage(img4,x1,0,196,300,230,130,250,450);
+	vcon.drawImage(img5,x1,0,180,300,430,100,250,450);
+	vcon.drawImage(img6,x1,0,160,300,530,100,250,450);
+	
+	}
+</script>
+</head>
+<body onload="loading()">
+<center>
+<h1 style="font-family:fantasy; color: orange;"> Mary and Jane</h1>
+<h2 style="font-family: Times new Roman;">Chapter 4: Club room starts today</h2>
+<h3 style="font-family: inherit;">Scene 1: The club room start to be an official club.</h3>
+
+<img style="display:none" id="room" alt="" src="club.png" width="800" height="600">
+<img style="display:none" id="1" alt="" src="Scene1 1.png">
+<img style="display:none" id="2" alt="" src="Scene1 2.png">
+<img style="display:none" id="3" alt="" src="Scene1 3.png">
+<img style="display:none" id="4" alt="" src="Scene1 4.png">
+<img style="display:none" id="5" alt="" src="Scene1 5.png">
+<br>
+<canvas style="border-style:inset;"id="drawing" width="800"height="600"> browser Does not support HTML5</canvas>
+<p style="font-family: Times new Roman;"> After they successfully gather all the members for the club Mary and Jane start to report that they are going to start and official Loving Plants club.<br> They also inform the members that they will have an extra curricular activities while we are in this club. 
+ </p>
+ <FORM METHOD="LINK" ACTION="Scene4.html">
+<INPUT TYPE="submit" VALUE="Previous Button">
+<FORM METHOD="LINK" ACTION="Scene2.html">
+<INPUT TYPE="submit" VALUE="Next Button">
+
+</center>
+
+</body>
+</html>

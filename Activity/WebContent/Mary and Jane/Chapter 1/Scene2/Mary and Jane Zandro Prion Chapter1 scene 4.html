@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2,img3,img4;
+var x1=0, y1=0, x2=0, y2=230, w2=80, h2=80, g1=0;
+function loading(){
+
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("cool");
+	img2 = document.getElementById("daffy");
+	img3 = document.getElementById("prin");
+	img4 = document.getElementById("plant");
+	
+	setInterval("anim()",200);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 4) counter=0;
+	x1 = counter * 230;
+	g1 = counter * 140;
+	
+	y2+=10;
+	if (y2 > 250) {y2=230; w2=80, h2=80}
+	
+	
+ 	x2 = counter * 100;
+	vcon.drawImage(img1,0,0,800,600);
+	vcon.drawImage(img2,x1,0,200,200,40,80,300,500);
+	vcon.drawImage(img3,x1,0,200,200,500,50,300,500);
+	vcon.drawImage(img4,g1,0,150,240,500,250,183,200);
+	
+}
+</script>
+
+</head>
+<body onload="loading()">
+<center>
+<h1 style="font-family:fantasy; color: orange"> Mary and Jane</h1>
+<h2 style="font-family: Bodoni MT Black"> Chapter 1: The Past </h2>
+<h3>Scene no.4: Sharing</h3>
+<img style="display:none" id="cool" alt="" src="Untitled.jpg" width ="800" height="600">
+<img style="display:none" id="daffy" alt="" src="1.png">
+<img style="display:none" id="prin" alt="" src="2.png">
+<img style="display:none" id="plant" alt="" src="plant.png">
+<br>
+<canvas style="border-style:inset;"id="drawing" width="800"height="600"> browser Does not support HTML5</canvas>
+<p style="font-family: Bodoni MT Black"> Where they share their wants and hobbies. Because Mary and Jane love plants as you see in the scene. They start giving ideas of what they should do in thier college life</p>
+
+<a href="">
+    <button>Next Scene</button>
+</a>
+<a href="file:///C:/Users/Vivian/Desktop/Chapter%201/Scene1/Mary%20and%20Jane.html">
+    <button>Previous Scene</button>
+</a>
+</center>
+</form>
+
+</body>
+</html>

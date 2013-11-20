@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<center><title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2,img3,img4;
+var x1=230, y1=0, x2=0, y2=0, w2=500, h2=500, g1=0;
+function loading(){
+
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("BG");
+	img2 = document.getElementById("Jane1");
+	img3 = document.getElementById("Mary1");
+		
+	setInterval("anim()",400);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 5) counter=0;
+	x1 = counter * 230;
+	g1 = counter * 252;
+	
+	y2+=10;
+	if (y2 > 500) {y2=300; w2=500, h2=400}
+	w2-=5; h2-=5;
+	
+ 	x2 = counter * 100;
+	vcon.drawImage(img1,0,0,800,600);
+	vcon.drawImage(img2,x1,0,220,400,200,300,w2,h2);
+	vcon.drawImage(img3,x1,0,220,400,50,300,w2,h2);
+	
+}
+</script>
+</head>
+<body onload="loading()">
+<h1 style="font-family:fantasy; color: orange;"> Mary and Jane</h1>
+<h2 style="font-family: Bodoni MT Black"> Chapter 2: The Tour </h2>
+<h3>Scene no.1: What I need to see</h3>
+<img style="display:none" id="BG" alt="" src="Hall.png" width ="800" height="600">
+<img style="display:none" id="Jane1" alt="" src="1c.png">
+<img style="display:none" id="Mary1" alt="" src="2c.png">
+
+<br>
+<canvas style="border-style:inset;"id="drawing" width="800"height="600"> browser Does not support HTML5</canvas>
+<p style="font-family: Bodoni MT Black"> Mary and Jane are searching for their classrooms and lockers to be familiarize. They also tracking down everything they see so afterwards they don't look like an idoit when they want to find a place. Then mary and Jane pointing and listing down everyroom they will use in thier college life. </p>
+<FORM METHOD="LINK" ACTION="Scene2.html">
+<INPUT TYPE="submit" VALUE="Next Button">
+</center>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2,img3,img4;
+var x1=0, y1=0, x2=0, y2=230, w2=80, h2=80, g1=0;
+function loading(){
+
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("BG");
+	img2 = document.getElementById("Jack1");
+	img3 = document.getElementById("Jane1");
+	img4 = document.getElementById("Mary1");
+	
+	setInterval("anim()",400);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 4) counter=0;
+	x1 = counter * 230;
+	g1 = counter * 252;
+	
+	y2+=10;
+	if (y2 > 250) {y2=230; w2=80, h2=80}
+	
+	
+ 	x2 = counter * 100;
+	vcon.drawImage(img1,0,0,800,600);
+	vcon.drawImage(img2,x1,0,200,300,600,350,160,200);
+	vcon.drawImage(img3,x1,0,200,300,200,355,160,200);
+	vcon.drawImage(img4,g1,0,200,300,500,350,160,200);
+	
+}
+</script>
+</head>
+<body onload="loading()">
+<center>
+<h1 style="font-family:fantasy; color: orange"> Mary and Jane</h1>
+<h2 style="font-family: Bodoni MT Black"> Chapter 2 </h2>
+<h3>Scene no. : 2</h3>
+<img style="display:none" id="BG" alt="" src="Court.png" width ="800" height="600">
+<img style="display:none" id="Jack1" alt="" src="Jack1.png">
+<img style="display:none" id="Jane1" alt="" src="Jane1.png">
+<img style="display:none" id="Mary1" alt="" src="Mary1.png">
+<br>
+<canvas style="border-style:inset;"id="drawing" width="800"height="600"> browser Does not support HTML5</canvas>
+<p style="font-family: Bodoni MT Black"> This is where Mary and Jane meet Jack in the school Gym.<br> They introduce each other so they can be friends. In the start of thier tour Jack was volunteer to show the school grounds to them</p>
+
+</body>
+</center>
+</center>
+</html>

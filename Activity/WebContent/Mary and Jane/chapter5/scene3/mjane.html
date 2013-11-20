@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Mary & Jane Go to College</title>
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2;
+var b1=0, a1=460, a2=200; x1=0, x2=320, y2=200, c1=0, c2=220, c3=200
+function loadimg(){
+//alert('testing loadimg...');
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("bedroom");
+	img2 = document.getElementById("mary");
+	img3 = document.getElementById("jane");
+	
+
+	
+
+	setInterval("anim()",600);
+}
+var counter=0;
+function anim(){
+	counter++;
+	if(counter > 3) counter=0;
+	 b1= counter * 100; x1= counter * 100;
+
+	 
+	vcon.drawImage(img1,0,0,800,600); 
+	vcon.drawImage(img2,b1,0,100,100,a1,a2,100,200);
+	vcon.drawImage(img3,x1,0,100,100,x2,y2,100,200);
+
+	
+}
+</script>
+</head>
+<body background= "Background.jpg" onload="loadimg()" >
+
+<h1 style="color: red;">Mary And jane Go to College</h1>
+<h2 style="color: yellow;">Chapter 5 </h2>
+<h3 style="color: green;">Scene3:The use of cannabis</h3>
+<img style="display:none" id="bedroom" alt="" src="bedroom.png" width="600" height="400">
+<img style="display:none" id="mary" alt="" src="jane.png">
+<img style="display:none" id="jane" alt="" src="mary.png">
+
+
+
+<br>
+<canvas style="border-style: inset;" id="drawing" width="800" height="600">
+browser does not support html5</canvas>
+<p>After that check up Mary and Jane go back to their dorm and start using cannabis sativa. At first time they used cannabis sativa they feel already the effect of relaxation of mind. At first their mind was empty and things are slowing down and while they in the effect of cannabis sativa they got sleep without noticing it. </p>
+<a href="file:///C:/Users/User/Desktop/scene4/mjane.html">
+    <button>Next Scene</button>
+</a>
+
+</body>
+</html>
