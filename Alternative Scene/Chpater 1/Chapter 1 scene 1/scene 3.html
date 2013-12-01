@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2,img3,img4;
+var x1=0, y1=0, x2=400,x3=400,x4=500, y2=300, w2=80, h2=80, g1=0;
+function loading(){
+
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("BG");
+	img2 = document.getElementById("J");
+	img3 = document.getElementById("k");
+	
+	
+	setInterval("anim()",700);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 5) counter=0;
+	x1 = counter * 238;
+	a1 = counter * 244;
+	g1 = counter * 252;
+	
+	y2+=10;
+	if (y2 > 250) {y2=230; w2=80, h2=80}
+	
+	
+ 	x2 = counter * 100;
+	x3 = counter * 150;
+	x4 = counter * 100;
+	vcon.drawImage(img1,0,0,600,400);
+
+	vcon.drawImage(img3,x1,0,250,300,170,65,160,200);
+		vcon.drawImage(img2,x1,0,250,300,x2,200,160,200);
+	
+	
+}
+</script>
+</head>
+<center>
+<body onload="loading()">
+<h1 style="font-family:fantasy; color: orange"> Mary and Jane</h1>
+<h2 style="font-family: Bodoni MT Black">Alteranate Scene </h2>
+<img style="display:none" id="BG" alt="" src="BG.jpg" width ="600" height="400">
+<img style="display:none" id="J" alt="" src="Jane.png">
+<img style="display:none" id="k" alt="" src="goons.png">
+<br>
+<canvas style="border-style:inset;"id="drawing" width="600"height="400"> browser Does not support HTML5</canvas>
+
+
+</body>
+</center>
+</html>

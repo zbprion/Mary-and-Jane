@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sample HTML5 Animation</title>
+
+<script type="text/javascript">
+var vcanvas, vcon, img1, img2,img3,img4;
+var x1=0, y1=0, x2=0, y2=230, w2=80, h2=80, g1=0;
+function loading(){
+
+	vcanvas = document.getElementById("drawing");
+	vcon = vcanvas.getContext("2d");
+	img1 = document.getElementById("BG");
+	img2 = document.getElementById("J");
+	img3 = document.getElementById("M");
+	
+	
+	setInterval("anim()",400);
+	
+}
+var counter=0;
+
+function anim(){
+	counter++;
+	if (counter > 5) counter=0;
+	x1 = counter * 238;
+	
+	
+	
+ 	x2 = counter * 100;
+	vcon.drawImage(img1,0,0,800,600);
+	vcon.drawImage(img2,x1,0,230,300,300,110,200,500);
+	vcon.drawImage(img3,x1,0,230,300,200,80,200,500);
+	
+}
+</script>
+</head>
+<body onload="loading()">
+<center>
+<h1 style="font-family:fantasy; color: orange"> Atlernate</h1>
+<h2 style="font-family: Bodoni MT Black"> Chapter 5 </h2>
+<h3>Alternate no. : 2</h3>
+<img style="display:none" id="BG" alt="" src="locker.jpg" width ="800" height="600">
+<img style="display:none"" id="J" alt="" src="Jane2.png">
+<img style="display:none"" id="M" alt="" src="Mary.png">
+
+<br>
+<canvas style="border-style:inset;"id="drawing" width="800"height="600"> browser Does not support HTML5</canvas>
+
+</body>
+</center>
+</center>
+</html>
